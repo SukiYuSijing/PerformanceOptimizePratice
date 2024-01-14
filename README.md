@@ -20,12 +20,12 @@
 
 - 上面提到的减少dom的数量，在这个环节依然十分有用
 - debounce和trottle的使用
-- 组件的合理拆分，详见https://github.com/SukiYuSijing/Interactive-optimization/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95
+- 组件的合理拆分，详见[https://github.com/SukiYuSijing/Interactive-optimization/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95](https://github.com/SukiYuSijing/Interactive-optimization/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/README.md)
 - 不合理的正则会导致长任务甚至程序崩溃 
 - vue中watch,不需要继续监测时及早destroy.要不然里面watch的callback里可能有长任务，浪费资源
 - 识别组件库中有的组件本身存在问题，不使用存在性能问题的方法，例如element-plus的tree组件使用setSelectedNodes的时候会导致超长任务2s+，改成setChecked后解决问题
 
-### 较少网络请求
+### 减少网络请求
 - 比较稳定的接口，前端直接缓存刷新后第一次请求的数据，一次请求就反复利用 
 - 多次请求，抛弃前面的，前面的abort，经常是查询这种场景 
 - 多次请求，只响应第一次（正在请求中的那次）请求,或者第一次请求未完成，不允许后面再次发起，适用于表单保存提交等场景
